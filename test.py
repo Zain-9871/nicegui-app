@@ -2,7 +2,6 @@ from nicegui import ui
 import datetime
 import random
 import socket
-import os
 
 # Function to show the current date and time
 def show_datetime():
@@ -62,6 +61,5 @@ with ui.tabs():
     with ui.tab('Square'):
         ui.button('Calculate Square of 5', on_click=square_number)
 
-# Run the app on host and port from environment variable (Railway uses dynamic port)
-port = int(os.environ.get('PORT', 8080))  # Defaults to 8080 if no port is specified by Railway
-ui.run(host="0.0.0.0", port=port)
+# Run the app on host and port 8080
+ui.run(host="0.0.0.0", port=8080)
